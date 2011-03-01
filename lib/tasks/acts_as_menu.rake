@@ -1,10 +1,9 @@
 # encoding: utf-8
-namespace :create_data do
+namespace :acts_as_menu do
   desc 'create f_menu data in environment'
-  task :menu_data => :environment do 
+  task :create_datas => :environment do 
     puts "Creating  datas success,checkout your home page!"
     FMenu.delete_all
-    CMenu.delete_all
     FMenu.create([{ 
         :name => "主页",
         :url => "home_menu"
@@ -21,6 +20,5 @@ namespace :create_data do
         :name => "菜单设置",
         :url => "c_menu_win"
     }])
-  CMenu.create
   end
 end

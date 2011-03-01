@@ -10,6 +10,8 @@ class CreateCMenus < ActiveRecord::Migration
       #t.integer :user_id
       t.timestamps
     end
+    CMenu.delete_all
+    CMenu.create
   end
 
   def self.down

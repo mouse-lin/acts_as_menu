@@ -1,9 +1,0 @@
-<%= form_for :f_menu,@f_menu, :url => {:action => "update_f_menu", :id => @f_menu.id } do |f| %>
-  名称：
-  <%= f.text_field :name %><br>
-  url ：
-  <%= f.text_field :url %> 
-  <%= f.submit :确定 %><br>
-  <%=link_to :返回添加第一级菜单, :action => "f_menu_win" %>
-  <%=link_to :返回主页, :action => "home_menu" %>
-<% end %>

@@ -1,6 +1,6 @@
 require 'rails/generators'
 
-class ActsAsMenuGenerate
+class ActsAsMenu
 
   #create all the necessary files
   class CreateAll < Rails::Generators::Base
@@ -63,34 +63,40 @@ class ActsAsMenuGenerate
     end
 
     def create_css_image_js_file
-      directory "acts_as_menus-images","public/images/acts_as_menus-image"
-      directory "acts_as_menus-js","public/javascripts/acts_as_menus-js"
-      directory "acts_as_menus-css","public/stylesheets/acts_as_menus-css"
+      directory "acts_as_menu-images","public/images/acts_as_menu-images"
+      directory "acts_as_menu-js","public/javascripts/acts_as_menu-js"
+      directory "acts_as_menu-css","public/stylesheets/acts_as_menu-css"
     end
 
     def route_sett
-      route '
-        resources :acts_as_menus do
-          collection do
-            get "home_menu"
-            get "f_menu_win" 
-            get "s_menu_win" 
-            get "t_menu_win" 
-            get "c_menu_win" 
-            post "f_menu_create"
-            post "s_menu_create"
-            post "t_menu_create"
-            post "c_menu_update"
-            post "update_f_menu"
-            post "update_s_menu"
-            post "update_t_menu"
-          end
-        member do
-           get "update_f_menu_win"
-           get "update_s_menu_win"
-           get "update_t_menu_win"
-        end
-      end
+route '
+ resources :acts_as_menus do
+   collection do
+     get "home_menu"
+     get "f_menu_win" 
+     get "s_menu_win" 
+     get "t_menu_win" 
+     get "c_menu_win" 
+     post "f_menu_create"
+     post "s_menu_create"
+     post "t_menu_create"
+     post "c_menu_update"
+     post "update_f_menu"
+     post "update_s_menu"
+     post "update_t_menu"
+   end
+   member do
+     get "update_f_menu_win"
+     get "update_s_menu_win"
+     get "update_t_menu_win"
+   end
+ end
+ match "home_menu" => "acts_as_menus#home_menu"
+ match "f_menu_win" => "acts_as_menus#f_menu_win"
+ match "s_menu_win" => "acts_as_menus#s_menu_win"
+ match "t_menu_win" => "acts_as_menus#t_menu_win"
+ match "c_menu_win" => "acts_as_menus#c_menu_win"
+
       '
     end
   end
