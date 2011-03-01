@@ -96,7 +96,6 @@ route '
  match "s_menu_win" => "acts_as_menus#s_menu_win"
  match "t_menu_win" => "acts_as_menus#t_menu_win"
  match "c_menu_win" => "acts_as_menus#c_menu_win"
-
       '
     end
   end
