@@ -63,7 +63,7 @@ class ActsAsMenuGenerate
     end
 
     def create_css_image_js_file
-      directory "acts_as_menus-image","app/public/images/acts_as_menus-image"
+      directory "acts_as_menus-images","app/public/images/acts_as_menus-image"
       directory "acts_as_menus-js","app/public/javascripts/acts_as_menus-js"
       directory "acts_as_menus-css","app/public/stylesheets/acts_as_menus-css"
     end
