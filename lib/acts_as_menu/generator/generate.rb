@@ -111,11 +111,21 @@ class ActsAsMenuGenerate
        end
     end
 
-    def create_menu_migration_file
+    def create_f_menu_migration_file
       migration_template 'create_f_menus_migration.rb', 'db/migrate/create_f_menus_migration.rb'
+    end
+
+    def create_s_menus_migration_file
       migration_template 'create_s_menus_migration.rb', 'db/migrate/create_s_menus_migration.rb'
+    end
+
+    def create_t_menus_migration_file
       migration_template 'create_t_menus_migration.rb', 'db/migrate/create_t_menus_migration.rb'
+    end
+
+    def create_c_menu_migration_file
       migration_template 'create_c_menus_migration.rb', 'db/migrate/create_c_menus_migration.rb'
     end
   end
+
 end
