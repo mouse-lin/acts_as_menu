@@ -1,0 +1,21 @@
+<title>添加第二级菜单</title>
+<b>现已有的第二级菜单</b><br>
+<% @s_menu_datas.each do |s|%>
+ <b>名称：</b> <%= s.name %> 
+  <b>url:</b> <%=  s.url %>
+  <%=link_to :编辑, :action =>  "update_s_menu_win", :id => "#{ s.id }"  %>
+  <br>
+<% end %>
+<br>
+<b>
+  添加新的第二级菜单
+</b>
+<%= form_for :s_menu, :url => {:action => "s_menu_create" } do |s| %>
+  名称：
+  <%= s.text_field :name %><br>
+  url ：
+  <%= s.text_field :url %><br> 
+  <%= s.select :f_menu_id, @f_menu ,{ :prompt => '请选择第一级菜单' } %><br>
+  <%= s.submit :确定 %><br>
+  <%=link_to :返回主页, :action => "home_menu" %>
+<% end %>

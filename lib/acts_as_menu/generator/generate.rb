@@ -1,6 +1,6 @@
 require 'rails/generators'
+require 'rails/generators/migration'
 
-class ActsAsMenu
 
   #create all the necessary files
   class CreateAll < Rails::Generators::Base
@@ -124,5 +124,3 @@ route '
       migration_template 'create_c_menus_migration.rb', 'db/migrate/create_c_menus.rb'
     end
   end
-
-end
