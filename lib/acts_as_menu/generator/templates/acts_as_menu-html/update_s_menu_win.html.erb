@@ -7,5 +7,5 @@
   <%= s.select :f_menu_id, @f_menu ,{ :prompt => '请选择第一级菜单' } %><br>
   <%= s.submit :确定 %><br>
   <%=link_to :返回添加第二级菜单, :action => "s_menu_win" %>
-  <%=link_to :返回主页, :action => "home_menu" %>
+  <%= render :partial => "link" %>
 <% end %>

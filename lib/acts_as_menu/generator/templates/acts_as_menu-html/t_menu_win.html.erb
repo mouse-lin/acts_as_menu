@@ -17,5 +17,5 @@
   <%= t.text_field :url %><br> 
   <%= t.select :s_menu_id, @s_menu ,{ :prompt => '请选择第二级菜单' } %><br>
   <%= t.submit :确定 %><br>
-  <%=link_to :返回主页, :action => "home_menu" %>
+  <%= render :partial => "link" %>
 <% end %>

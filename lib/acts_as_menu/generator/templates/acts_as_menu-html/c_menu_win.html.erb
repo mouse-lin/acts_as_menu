@@ -12,6 +12,6 @@
   菜单停留时间(默认为'800'):
   <%= f.text_field :delay %><br> 
   <%= f.submit :确定 %><br>
-  <%=link_to :返回主页, :action => "home_menu" %>
+  <%= render :partial => "link" %>
 <% end %>
 
