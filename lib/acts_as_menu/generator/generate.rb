@@ -18,7 +18,7 @@ class ActsAsMenuGenerate
     end
 
     def self.next_migration_number(dirname)
-       if ActiveRecord::Base.timestamped_migrations
+       unless ActiveRecord::Base.timestamped_migrations
          Time.now.utc.strftime("%Y%m%d%H%M%S")
        else
          "%.3d" % (current_migration_number(dirname) + 1)
@@ -26,10 +26,10 @@ class ActsAsMenuGenerate
     end
 
     def create_menu_migration_file
-      migration_template 'create_f_menus_migration.rb', 'db/migrate/create_f_menus_migration.rb'
-      migration_template 'create_s_menus_migration.rb', 'db/migrate/create_s_menus_migration.rb'
-      migration_template 'create_t_menus_migration.rb', 'db/migrate/create_t_menus_migration.rb'
-      migration_template 'create_c_menus_migration.rb', 'db/migrate/create_c_menus_migration.rb'
+      migration_template 'create_f_menus_migration.rb', 'db/migrate/create_f_menus.rb'
+      migration_template 'create_s_menus_migration.rb', 'db/migrate/create_s_menus.rb'
+      migration_template 'create_t_menus_migration.rb', 'db/migrate/create_t_menus.rb'
+      migration_template 'create_c_menus_migration.rb', 'db/migrate/create_c_menus.rb'
     end
   end
 
@@ -104,27 +104,18 @@ class ActsAsMenuGenerate
     end
 
     def self.next_migration_number(dirname)
-       if ActiveRecord::Base.timestamped_migrations
+       unless ActiveRecord::Base.timestamped_migrations
          Time.now.utc.strftime("%Y%m%d%H%M%S")
        else
          "%.3d" % (current_migration_number(dirname) + 1)
        end
     end
 
-    def create_f_menu_migration_file
-      migration_template 'create_f_menus_migration.rb', 'db/migrate/create_f_menus_migration.rb'
-    end
-
-    def create_s_menus_migration_file
-      migration_template 'create_s_menus_migration.rb', 'db/migrate/create_s_menus_migration.rb'
-    end
-
-    def create_t_menus_migration_file
-      migration_template 'create_t_menus_migration.rb', 'db/migrate/create_t_menus_migration.rb'
-    end
-
-    def create_c_menu_migration_file
-      migration_template 'create_c_menus_migration.rb', 'db/migrate/create_c_menus_migration.rb'
+    def create_migration_file
+      migration_template 'create_f_menus_migration.rb', 'db/migrate/create_f_menus.rb'
+      migration_template 'create_s_menus_migration.rb', 'db/migrate/create_s_menus.rb'
+      migration_template 'create_t_menus_migration.rb', 'db/migrate/create_t_menus.rb'
+      migration_template 'create_c_menus_migration.rb', 'db/migrate/create_c_menus.rb'
     end
   end
 
