@@ -59,7 +59,7 @@ require 'rails/generators/migration'
     end
 
     def create_view_file
-      directory "acts_as_menus-html", "app/views/acts_as_menus"
+      directory "acts_as_menu-html", "app/views/acts_as_menus"
     end
 
     def create_css_image_js_file
