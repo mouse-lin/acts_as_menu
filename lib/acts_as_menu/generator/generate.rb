@@ -55,7 +55,7 @@ class ActsAsMenuGenerate
     end
 
     def create_controller_file
-      template 'acts_as_menus_controller.rb', 'app/controller/acts_as_menus_controller.rb'
+      template 'acts_as_menus_controller.rb', 'app/controllers/acts_as_menus_controller.rb'
     end
 
     def create_view_file
@@ -63,9 +63,9 @@ class ActsAsMenuGenerate
     end
 
     def create_css_image_js_file
-      directory "acts_as_menus-images","app/public/images/acts_as_menus-image"
-      directory "acts_as_menus-js","app/public/javascripts/acts_as_menus-js"
-      directory "acts_as_menus-css","app/public/stylesheets/acts_as_menus-css"
+      directory "acts_as_menus-images","public/images/acts_as_menus-image"
+      directory "acts_as_menus-js","public/javascripts/acts_as_menus-js"
+      directory "acts_as_menus-css","public/stylesheets/acts_as_menus-css"
     end
 
     def route_sett
