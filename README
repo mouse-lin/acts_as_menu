@@ -2,12 +2,30 @@ ActsAsMenu
 ==========
 
 Introduction goes here.
+适合于 rails >= 3.0.x
+       Ruby = 1.9.x
 
+首先创建你的rails 项目 rails new mytest
 
-Example
-=======
+获取acts_as_menu
+rails plugin install git://github.com/mouse-lin/acts_as_menu.git
 
-Example goes here.
+使用下面命令来创建需要的model 与migration
+rails generate create_all
+(注意：rails gengerate create_migrate 与 rails generate create_model 可以分别创建所需要的migration 与model，如果你使用了上面的命令就不必要再使用这命令)
+
+(可选)如果你是需要例子来帮助的，可以使用下面的命令来创建所需要的controller 与view
+rails generate create_example
+
+创建需要的数据库与迁移任务(建表)
+rake db:create
+rake db:migrate
+
+使用下面的命令来创建第一次菜单的数据(user the follow command to create f_menu data in environment)
+rake acts_as_menu:create_datas  
+
+登录例子查看动态菜单(acts_as_menu)
+http://localhost:3000/home_menu
 
 
 Copyright (c) 2011 [name of plugin creator], released under the MIT license
